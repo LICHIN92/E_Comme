@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.un_order{
+    background-color: #334155;
+    /* background-color: aquamarine;
+    height: 100%;
+    width: 100%; */
+}
+.un_order li .link {
+    color: #F97322;
+    text-decoration: none;
+}
+
+.un_order li .link:hover{
+    color: wheat;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    text-decoration-color:#F97322;
+}

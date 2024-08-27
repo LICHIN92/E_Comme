@@ -1,0 +1,50 @@
+.loader {
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    background-color: rgb(0, 0, 0,.8);
+}
+
+.loader_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.loader_box span{
+    font-size: large;
+    font-weight: 500;
+    animation:coloring 3s linear infinite;
+}
+.loader_box img {
+    height: 50px;
+    animation: spinner 4s linear infinite;
+}
+@keyframes coloring{
+    0%, 100% {
+        font-size: larger;
+    }
+    25%, 75% {
+        font-size: large;
+        font-weight: 300;
+    }
+    50% {
+        font-size: medium;
+    }
+}
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media(max-width:500px){
+    .loader_box{
+        width: 95%;
+    }
+}

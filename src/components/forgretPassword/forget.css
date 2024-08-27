@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.forget_body {
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot_Form {
+    background-color: #405D72;
+    box-shadow: 20px 15px 15px 8px #554f4d;
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot_Form form div {
+    display: flex;
+    flex-direction: column;
+    margin-block: 15px;
+}
+
+.forgot_Form form div input {
+    height: 38px;
+    width: 250px;
+    color: rgb(34, 31, 31);
+    padding-left: 2px;
+    border-radius: 5px;
+    padding-left: 2px;
+    border: solid 1px ;
+}
+.forgot_Form button{
+    background-color:#db5918;
+    height: 40px;
+    margin-top: 5px;
+    color: white;
+}
+.forgot_Form button:hover{
+    background-color:#91634c ;
+}
+@media(max-width:412px){
+    .forgot_Form{
+        width: 98vw;
+    }
+}
+@media(max-width:277px){
+    .forgot_Form form div input{
+        width: 95vw;
+    }
+    .forgot_Form button{
+        border-radius: 8px;
+    }
+}
+@media(max-with:220px){
+    .forgot_Form button{
+        font-size: smaller;
+    }
+}

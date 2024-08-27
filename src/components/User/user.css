@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.user {
+    min-height: 100vh;
+}
+
+.sign_container,
+.user {
+    background-color: #1A3636;
+    min-height: 100vh;
+
+}
+
+.create_account {
+    color: #D6BD98;
+}
+
+.sign_up div input {
+    border-radius: 3px;
+}
+
+.sign_up div label {
+    color: rgb(233, 219, 219);
+}
+
+small {
+    color: rgba(255, 0, 0, 0.973);
+}
+
+.login form {
+    border: 1px solid;
+}
+
+.click:hover {
+    color: rgba(8, 183, 214, 0.562);
+    outline: chartreuse;
+    font-weight:bold;
+}
+
+@media(min-width:380px) {
+    .sign_up {
+        border: 1px solid wheat;
+        padding: 5px 30px;
+    }
+}
+
+@media (max-width:250px) {
+
+    .sign_up div input,
+    .sign_up_button {
+        width: 95vw;
+    }
+
+    .sign_up div {
+        padding-inline: 10px;
+
+    }
+}
+
+@media (max-width:260px) {
+    .create_account {
+        font-size: 1.5rem;
+    }
+
+    .sign_up {
+        margin-bottom: 2px;
+    }
+
+    .sign_up_button {
+        margin: 2px;
+    }
+}
+
+@media (max-width:222px) {
+    .create_account {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width:300px) {
+    .login form {
+        border:none;
+    }
+    .login form input{
+        width: 98vw;
+    }
+}

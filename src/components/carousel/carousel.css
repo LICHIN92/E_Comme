@@ -1,0 +1,10 @@
+.carousel-item img{
+    height: 250px;
+    margin:0;
+
+}
+.alert{
+    margin:0;
+    border-radius:0;
+    padding: 0;
+}
