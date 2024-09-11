@@ -21,9 +21,13 @@ const NavBar = () => {
   const handleClick = () => {
     setShow(!show)
   }
-  const addsection=()=>{
+  const addsection = () => {
     setShow(!show)
     navigate('/AddCategory')
+  }
+  const book=()=>{
+    setShow(!show)
+    navigate('/Bookings')
   }
   const LogoutFunction = () => {
     handleClick()
@@ -37,7 +41,9 @@ const NavBar = () => {
         <li onClick={handleClick}><Link className='link' to='/'>HOME</Link> </li>
         <li onClick={handleClick}><ScrollLink className='link' spy={true} smooth={true} to="about">ABOUT</ScrollLink> </li>
         {/* <li>ITEMS</li> */}
-        <li onClick={handleClick}><Link className='link' to=''>CONTACT</Link></li>
+        {token && user && user.user.user ?
+              <li onClick={book}><Link className='link' to=''>BOOKING</Link></li> :
+              <li onClick={handleClick}><Link className='link' to=''>CONTACT</Link></li>}
 
         {token && user && user.user.user &&
           <li onClick={addsection}><Link className='link' to=''>ADD_ITEM</Link></li>
@@ -66,9 +72,15 @@ const NavBar = () => {
           <ul className='un_order uppercase lg:flex flex-row justify-center items-center pt-3 gap-4 text-orange-500 text-[15px] me-4 font-serif hidden'>
             <li onClick={handleClick}><Link className='link' to='/'>HOME</Link> </li>
             <li onClick={handleClick}><ScrollLink className='link' spy={true} smooth={true} to="about">ABOUT</ScrollLink> </li>
-            <li onClick={handleClick}><Link className='link' to=''>CONTACT</Link></li>
-            {token && user && user.user.user  &&
-              <li onClick={addsection}><Link className='link' to=''>ADD_ITEM</Link></li> 
+
+
+            {token && user && user.user.user ?
+              <li onClick={book}><Link className='link' to=''>BOOKING</Link></li> :
+              <li onClick={handleClick}><Link className='link' to=''>CONTACT</Link></li>}
+
+
+            {token && user && user.user.user &&
+              <li onClick={addsection}><Link className='link' to=''>ADD_ITEM</Link></li>
             }
             {token && user && user.user &&
               <>
