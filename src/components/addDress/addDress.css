@@ -65,7 +65,24 @@ select {
     cursor: pointer;
 }
 
+.imageprev{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 
+}
+.imageprev .close{
+    position: absolute;
+    width: 15px;
+    top: -1px;
+    right: -1px; 
+    cursor: pointer;
+
+}
+.veiwingImage{
+ width: 70px;
+ height: 80px;
+}
 @media(min-width:1024px){
     .addDress{
         padding-inline: 5px;

@@ -42,13 +42,22 @@
     border: solid 1px ;
 }
 .forgot_Form button{
-    background-color:#db5918;
+    background-color:rgb(7, 66, 7);
+    box-shadow: 9px 9px 5px 1px black;
+    border-radius: 5px;
     height: 40px;
     margin-top: 5px;
     color: white;
 }
 .forgot_Form button:hover{
-    background-color:#91634c ;
+    background-color:rgb(2, 87, 2) ;
+    box-shadow: 5px 5px 5px 1px black;
+
+}
+.backto{
+    color: rgb(47, 0, 255);
+    cursor: pointer;
+    font-weight: 600;
 }
 @media(max-width:412px){
     .forgot_Form{

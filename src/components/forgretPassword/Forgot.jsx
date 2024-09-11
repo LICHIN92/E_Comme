@@ -6,7 +6,7 @@ import './forget.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const Forgot = () => {
+const Forgot = ({setForgot}) => {
     const schema = yup.object({
         Email: yup.string().email("Invalid email format").required("Email is required"),
         Mobile: yup.string().required("Mobile number is required").matches(/^[0-9]{10}$/, "Mobile number must be 10 digits"),
@@ -65,6 +65,7 @@ const Forgot = () => {
                         <button type='submit'>Change Password</button>
                     </div>
                 </form>
+                <span className='backto' onClick={()=>setForgot(false)}>Back to Login Page</span>
             </div>
         </div>
     );

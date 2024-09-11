@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from "yup";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Category = () => {
     const schema = yup.object({
@@ -14,6 +15,7 @@ const Category = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
     const [images, setImages] = useState(null);
+    const navigate=useNavigate()
 
     const handleFileChange = (e) => {
         e.preventDefault();
@@ -33,14 +35,17 @@ const Category = () => {
             });
 
             // Sending the form data
+            const token=localStorage.getItem('user')
             const upload = await axios.post('http://localhost:3200/admin', formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization':`Bearer ${token}`
                 }
             });
 
             console.log(upload.data);
-
+                alert(upload.data.message)
+                navigate('/')
         } catch (error) {
             console.error('There was an error uploading the file:', error);
         }
@@ -63,6 +68,7 @@ const Category = () => {
                             <option value="men">Men</option>
                             <option value="women">Women</option>
                             <option value="kid">Kids</option>
+                            <option value="all">All</option>
                         </select>
                         {errors.Category && <small>{errors.Category.message}</small>}
                     </div>

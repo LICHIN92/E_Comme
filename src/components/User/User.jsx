@@ -44,6 +44,7 @@ const User = ({ setLoader }) => {
             setLoader(false)
             alert(Sign.data);
             setBoxtype('login')
+            navigate('/')
         } catch (error) {
             console.log(error);
             alert(error.response.data)
@@ -52,17 +53,19 @@ const User = ({ setLoader }) => {
 
     const LoginSubmit = async (data) => {
         console.log(data);
-        localStorage.setItem('email',data.userId)
+        localStorage.setItem('email', data.userId)
         try {
             setLoader(true)
             const response = await axios.post('http://localhost:3200', data);
             alert(response.data.message);
             setLoader(false)
             localStorage.setItem('user', response.data.token);
-  localStorage.removeItem('email')
+            localStorage.removeItem('email')
 
             const token = localStorage.getItem('user');
             const decodedToken = jwtDecode(token);
+            console.log(decodedToken);
+            
             dispath(setUserData(decodedToken))
 
             navigate('/');
@@ -81,7 +84,7 @@ const User = ({ setLoader }) => {
 
     return (
         <div>
-            {forgot && <Forgot />}
+            {forgot && <Forgot setForgot={setForgot}/>}
 
             <div className='user absolute w-screen p-3 h-screen lg:h-screen'>
                 <h1 className='text-yellow-500 mt-2 font-serif italic text-4xl '>E-shop</h1>

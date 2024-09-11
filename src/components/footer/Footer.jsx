@@ -1,6 +1,10 @@
 import React from 'react'
 import './footer.css'
 import { Element } from 'react-scroll'
+import { MdEmail } from 'react-icons/md'
+import { FaFacebook} from 'react-icons/fa'
+import { IoLogoWhatsapp } from 'react-icons/io'
+import { FaMobileScreenButton } from 'react-icons/fa6'
 
 function Footer() {
     return (
@@ -8,10 +12,11 @@ function Footer() {
             <Element name='about'>
                 <div className='bg-slate-900 text-center'>about
                     <div className='flex ps-3 '>
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
+                        <ul >
+                            <li className='flex gap-1'> <li className='italic'>E-shops</li>
+                             is very small business</li>
+                            <li>Based on Kayakkodi</li>
+                            <li>Cash on delivery</li>
                         </ul>
                     </div>
                 </div>
@@ -21,11 +26,11 @@ function Footer() {
                 <div className='bg-slate-900 text-center'>contact
                     <div className='flex ps-3'>
                         <ul>
-                            <li>address 1</li>
-                            <li>address2</li>
-                            <li>address3</li>
+                            <li>Navottukkunnummal</li>
+                            <li>Kayakkodi (po)</li>
+                            <li>Kozhikkode PIN:673508</li>
                         </ul>
-                    </div>
+                    </div>  
                 </div>
             </Element>
 
@@ -33,20 +38,20 @@ function Footer() {
                 <div className='bg-slate-900 text-center'>connect
                     <div className='flex ps-3 '>
                         <ul>
-                            <li>email</li>
-                            <li>whatsApp</li>
-                            <li>facebook</li>
+                            <li className='flex items-center gap-1'> <MdEmail/> email</li>
+                            <li className='flex items-center gap-1'> <IoLogoWhatsapp/> whatsApp</li>
+                            <li className='flex items-center gap-1'><FaFacebook/> facebook</li>
                         </ul>
                     </div>
                 </div>
             </Element>
             <Element>
-                <div className='bg-slate-900 text-center'>fourth
+                <div className='bg-slate-900 text-center'>Connect
                     <div className="flex ps-3">
                         <ul>
-                            <li>f</li>
-                            <li>f</li>
-                            <li>f</li>
+                            <li className='flex items-center gap-1'><FaMobileScreenButton />8086200861</li>
+                            <li className='flex items-center gap-1'><FaMobileScreenButton />8086200861</li>
+                            <li className='flex items-center gap-1'><FaMobileScreenButton />8086200861</li>
                         </ul>
                     </div>
                 </div>

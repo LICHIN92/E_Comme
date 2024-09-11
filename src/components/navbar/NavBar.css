@@ -13,6 +13,7 @@
 .un_order li .link {
     color: #F97322;
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 .un_order li .link:hover{

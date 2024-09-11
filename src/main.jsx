@@ -19,6 +19,11 @@ import Loader from './components/loader/Loader.jsx'
 import Auth from './pages/auth/Auth.jsx'
 import AddDress from './components/addDress/AddDress.jsx'
 import Forgot from './components/forgretPassword/Forgot.jsx'
+import AuthProted from './protectedRouter/AuthProted.jsx'
+import Profile from './components/profile/Profile.jsx'
+import Details from './components/DressDetails/Details.jsx'
+import Adminprotect from './protectedRouter/Adminprotect.jsx'
+import Booking from './components/Bookings/Booking.jsx'
 
 
 const router = createBrowserRouter([
@@ -35,14 +40,49 @@ const router = createBrowserRouter([
       },
       {
         path:"/addDress",
-        element:<AddDress/>
+        // element:<AddDress/>
+        element:(
+          <Adminprotect>
+            <AddDress/>
+          </Adminprotect>
+        )
+      },
+      {
+        path:'/AddCategory',
+        // element:<Category/>
+        element:(
+          <Adminprotect>
+           <Category/> 
+          </Adminprotect>
+        )
+      },
+      {
+        path:"/Bookings",
+        element:(
+          <Adminprotect>
+            <Booking/>
+          </Adminprotect>
+
+        )
+      },
+      {
+        path:'/user/profile',
+        element:<Profile/>
+      },
+      {
+        path:"/Dress/:id",
+        element:<Details/>
       }
 
     ]
   },
   {
     path: "/user",
-    element: <Auth />
+    element: (
+    <AuthProted>
+      <Auth />
+    </AuthProted>
+    )
   }
 ]);
 

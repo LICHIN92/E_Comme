@@ -1,5 +1,10 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .carousel-item img{
-    height: 250px;
+    height: 360px;
     margin:0;
 
 }
@@ -7,4 +12,10 @@
     margin:0;
     border-radius:0;
     padding: 0;
+}
+@media(max-width:400px){
+    .carousel-item img{
+        width: 100vw;
+        height: 50vh;
+    }
 }
