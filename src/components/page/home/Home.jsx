@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const items = async () => {
       try {
-        const data = await axios.get('https://ecomback-sli5.onrender.com/product/home')
+        const data = await axios.get('https://ecomback-1.onrender.com/product/home')
         console.log(data);
         setItems(data.data)
       } catch (error) {
@@ -22,7 +22,7 @@ const Home = () => {
   const ViewItem = async (Type) => {
     const user = localStorage.getItem('user')
     if (user) {
-      const result = await axios.get(`https://ecomback-sli5.onrender.com/product/viewType/${Type}`);
+      const result = await axios.get(`https://ecomback-1.onrender.com/product/viewType/${Type}`);
       console.log(result.data.items);
 
       // Correctly passing state

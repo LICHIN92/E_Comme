@@ -40,7 +40,7 @@ const User = ({ setLoader }) => {
         }
         try {
             setLoader(true)
-            const Sign = await axios.post('https://ecomback-sli5.onrender.com/signup', data);
+            const Sign = await axios.post('https://ecomback-1.onrender.com/signup', data);
             setLoader(false)
             alert(Sign.data);
             setBoxtype('login')
@@ -56,7 +56,7 @@ const User = ({ setLoader }) => {
         localStorage.setItem('email', data.userId)
         try {
             setLoader(true)
-            const response = await axios.post('https://ecomback-sli5.onrender.com', data);
+            const response = await axios.post('https://ecomback-1.onrender.com', data);
             alert(response.data.message);
             setLoader(false)
             localStorage.setItem('user', response.data.token);
@@ -113,10 +113,9 @@ const User = ({ setLoader }) => {
                                     <input className='bg-lime-800 h-10 rounded text-white font-semibold text-xl  w-60' type="submit" value={'Log in'} />
                                     <span className='text-white'>Don't have Account? <span className='click cursor-pointer' onClick={() => handleBoxTypeChange('create')}>Create_Account</span></span>
                                 </div>
-                                <div className='flex flex-col'>
+                                <div className='flex flex-col items-center'>
                                     <span className='text-orange-200 cursor-pointer' onClick={() => setForgot(true)}>Forgot Password</span>
-                                    <span onClick={()=>navigate('/')} className='text-blue-200 cursor-pointer
-                                    '>Home Page</span>
+                                    <span onClick={()=>navigate('/')} className='text-blue-200 cursor-pointer'>Home Page</span>
                                 </div>
                             </form>
                         </div>

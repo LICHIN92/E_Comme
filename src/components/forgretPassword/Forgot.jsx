@@ -22,7 +22,7 @@ const Forgot = ({setForgot}) => {
     const onSubmit = async (data) => {
         console.log(data);
         try {
-            const result = await axios.post('https://ecomback-sli5.onrender.com/forgot', data)
+            const result = await axios.post('https://ecomback-1.onrender.com/forgot', data)
             console.log(result);
             localStorage.removeItem('email')
             navigate('/')
