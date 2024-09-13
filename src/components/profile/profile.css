@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+.profile{
+    max-width: 100vw;
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+.profileName{
+    /* max-width: 100vw; */
+
+}
+.profileName img{
+    width: 50px;
+    
+}
+.userBooking{
+    /* background-color: aqua; */
+}
+.usedbooedDetails{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.bookedDetail{
+    width: 200px;
+    margin-top: 5px;
+    border: 1px solid ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+    border-radius: 5px;
+}
+.bookedDetail button{
+    border-radius: 5px;
+}
+.bookedimage{
+    width: 60px;
+    height: 70px;
+}
+

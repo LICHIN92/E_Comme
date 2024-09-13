@@ -21,7 +21,7 @@ console.log(user?.user?.user);
   useEffect(() => {
     const view = async () => {
       try {
-        const result = await axios.get(`http://localhost:3200/product/viewType/${type}`);
+        const result = await axios.get(`https://ecomback-sli5.onrender.com/product/viewType/${type}`);
         console.log(result);
         setData(result.data.items)
       } catch (error) {

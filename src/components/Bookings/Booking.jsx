@@ -9,10 +9,15 @@ const Booking = () => {
         const date = new Date(timestamp); // Create a new Date object
         return date.toLocaleString(); // Convert it to a readable string
     };
+    const token=localStorage.getItem('user')
     useEffect(() => {
         const book = async () => {
             try {
-                const data = await axios.get('http://localhost:3200/booking')
+                const data = await axios.get('https://ecomback-sli5.onrender.com/booking/bookings',{
+                    headers:{
+                        "Authorization":`Bearer ${token}`
+                    }
+                })
                 console.log(data.data.data);
                 setBook(data.data.data)
             } catch (error) {
@@ -25,7 +30,7 @@ const Booking = () => {
         console.log(id);
         const Id = id
         try {
-            const result = await axios.put(`http://localhost:3200/booking/${id}`)
+            const result = await axios.put(`https://ecomback-sli5.onrender.com/booking/${id}`)
             setRefresh(prev => !prev)
             console.log(refresh);
             alert('updated')

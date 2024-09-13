@@ -29,6 +29,10 @@ const NavBar = () => {
     setShow(!show)
     navigate('/Bookings')
   }
+  const profile=()=>{
+    setShow(!show)
+    navigate('/user/profile')
+  }
   const LogoutFunction = () => {
     handleClick()
     localStorage.removeItem('user')
@@ -54,7 +58,7 @@ const NavBar = () => {
         }
         {token && user && user.user &&
           <>
-            <li onClick={() => navigate('/user/profile')} className='uppercase flex gap-1 items-center' > {user.user.FirstName} </li>
+            <li onClick={profile } className='uppercase flex gap-1 items-center' > {user.user.FirstName} </li>
             <li onClick={LogoutFunction}><button className='btn btn-danger py-0 px-1 capitalize'>Logout</button></li>
           </>
 

@@ -36,7 +36,7 @@ const Category = () => {
 
             // Sending the form data
             const token=localStorage.getItem('user')
-            const upload = await axios.post('http://localhost:3200/admin', formData, {
+            const upload = await axios.post('https://ecomback-sli5.onrender.com/admin', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization':`Bearer ${token}`

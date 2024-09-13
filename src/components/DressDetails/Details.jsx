@@ -26,7 +26,7 @@ const Details = () => {
     useEffect(() => {
         const fetchDetail = async () => {
             try {
-                const result = await axios.get(`http://localhost:3200/product/${id}`);
+                const result = await axios.get(`https://ecomback-sli5.onrender.com/product/${id}`);
                 setData(result.data);
                 setType(data.Type)
                 console.log(result.data);
@@ -57,7 +57,7 @@ const Details = () => {
     const deleting = async (id) => {
         console.log(id);
         try {
-            const dele = await axios.delete(`http://localhost:3200/product/${id}`)
+            const dele = await axios.delete(`https://ecomback-sli5.onrender.com/product/${id}`)
             console.log(dele);
             alert(dele.data.message)
             setrefresh(true)
