@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const items = async () => {
       try {
-        const data = await axios.get('https://ecomback-yhya.onrender.com/product/home')
+        const data = await axios.get('https://ecomback-yhya.onrender.com/product/home',{ withCredentials: true })
         console.log(data);
         setItems(data.data)
       } catch (error) {

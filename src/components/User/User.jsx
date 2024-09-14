@@ -57,7 +57,7 @@ const User = ({ setLoader }) => {
         try {
             setLoader(true)
             const response = await axios.post('https://ecomback-yhya.onrender.com/user', data);
-            alert(response.data.message);
+            alert(response?.data?.message);
             setLoader(false)
             localStorage.setItem('user', response.data.token);
             localStorage.removeItem('email')
@@ -71,7 +71,7 @@ const User = ({ setLoader }) => {
             navigate('/');
         } catch (error) {
             console.log(error);
-            alert(error.response.data);
+            alert(error?.response?.data);
             setLoader(false)
         }
     };
