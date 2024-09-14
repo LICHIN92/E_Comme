@@ -13,7 +13,7 @@ const Booking = () => {
     useEffect(() => {
         const book = async () => {
             try {
-                const data = await axios.get('https://ecomback-2.onrender.com/booking/bookings',{
+                const data = await axios.get('https://ecomback-yhya.onrender.com/booking/bookings',{
                     headers:{
                         "Authorization":`Bearer ${token}`
                     }
@@ -30,7 +30,7 @@ const Booking = () => {
         console.log(id);
         const Id = id
         try {
-            const result = await axios.put(`https://ecomback-2.onrender.com/booking/${id}`)
+            const result = await axios.put(`https://ecomback-yhya.onrender.com/booking/${id}`)
             setRefresh(prev => !prev)
             console.log(refresh);
             alert('updated')

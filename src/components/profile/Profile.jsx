@@ -19,7 +19,7 @@ const Profile = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const response = await axios.get(`https://ecomback-2.onrender.com/user/${id}`, {
+        const response = await axios.get(`https://ecomback-yhya.onrender.com/user/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -35,7 +35,7 @@ const Profile = () => {
   useEffect(() => {
     const Bookings = async () => {
       try {
-        const response = await axios.get(`https://ecomback-2.onrender.com/Booking/user/${id}`, {
+        const response = await axios.get(`https://ecomback-yhya.onrender.com/Booking/user/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -52,7 +52,7 @@ const Profile = () => {
   const cancel=async(id)=>{
     const ID=id
     try {
-      const resp=await axios.delete(`https://ecomback-2.onrender.com/booking/${ID}`)
+      const resp=await axios.delete(`https://ecomback-yhya.onrender.com/booking/${ID}`)
       setRefresh(prev => !prev)
       alert('Canceled Your Booking')
 
