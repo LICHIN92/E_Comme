@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import CarouselC from '../../carousel/CarouselC'
-import './home.css'
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-const Home = () => {
-  const navigate = useNavigate();
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
+const DeleteCategary = () => {
+    const navigate = useNavigate();
   const [items, setItems] = useState([])
   useEffect(() => {
     const items = async () => {
@@ -14,8 +13,7 @@ const Home = () => {
         setItems(data.data)
       } catch (error) {
         console.log(error);
-        console.log("error");
-        
+
       }
     }
     items()
@@ -35,7 +33,6 @@ const Home = () => {
   }
   return (
     <div className='px-2 '>
-      <CarouselC />
       <div className='flex  flex-wrap justify-center  border rounded my-2 py-3 lg:gap-5  gap-3 '>
         {items.map((item, key) => (
           <div className='img_box relative border-l-fuchsia-700' key={key} onClick={() => ViewItem(item.Type)}>
@@ -54,4 +51,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default DeleteCategary

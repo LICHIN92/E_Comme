@@ -40,7 +40,7 @@ const User = ({ setLoader }) => {
         }
         try {
             setLoader(true)
-            const Sign = await axios.post('https://ecomback-1.onrender.com/signup', data);
+            const Sign = await axios.post('https://ecomback-2.onrender.com/user/signup', data);
             setLoader(false)
             alert(Sign.data);
             setBoxtype('login')
@@ -56,7 +56,7 @@ const User = ({ setLoader }) => {
         localStorage.setItem('email', data.userId)
         try {
             setLoader(true)
-            const response = await axios.post('https://ecomback-1.onrender.com', data);
+            const response = await axios.post('https://ecomback-2.onrender.com/user', data);
             alert(response.data.message);
             setLoader(false)
             localStorage.setItem('user', response.data.token);
@@ -120,7 +120,7 @@ const User = ({ setLoader }) => {
                             </form>
                         </div>
                         :
-                        <div className='sign_container  flex flex-col justify-center pt-2 pb-3  items-center '>
+                        <div className='sign_container  flex flex-col  pb-5   items-center '>
                             <h3 className='create_account font-bold font-serif text-3xl mb-2 underline'>Create Account</h3>
                             <form onSubmit={handleSubmit(handleSignup)} className='sign_up flex flex-col '>
                                 <div className="flex flex-col sm:mt-2 ">

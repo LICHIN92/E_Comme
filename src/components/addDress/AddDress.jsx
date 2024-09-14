@@ -77,7 +77,7 @@ const AddDress = () => {
         try {
             setLoader(true)
             const token=localStorage.getItem('user')
-            const result = await axios.post('https://ecomback-1.onrender.com/admin/addNewDress', data, {
+            const result = await axios.post('https://ecomback-2.onrender.com/admin/addNewDress', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     "authorization": `Bearer ${token}` // Added space after 'Bearer'

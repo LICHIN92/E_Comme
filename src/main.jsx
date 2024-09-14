@@ -24,6 +24,7 @@ import Profile from './components/profile/Profile.jsx'
 import Details from './components/DressDetails/Details.jsx'
 import Adminprotect from './protectedRouter/Adminprotect.jsx'
 import Booking from './components/Bookings/Booking.jsx'
+import DeleteCategary from './components/deletecate/DeleteCategary.jsx'
 
 
 const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
           </Adminprotect>
 
         )
+      },
+      {
+        path:"/adminCategory",
+        element:<DeleteCategary/>
       },
       {
         path:'/user/profile',

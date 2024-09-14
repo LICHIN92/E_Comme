@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import User from '../../components/User/User'
 import Loader from '../../components/loader/Loader'
-
+import './auth.css'
 const Auth = () => {
     const [loader, setLoader] = useState(false)
     return (
-        <div>
+        <div className='auth'>
             {loader && <Loader />}
 
         

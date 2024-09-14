@@ -6,6 +6,7 @@
 
 .user {
     min-height: 100vh;
+    max-width: 100vw;
 }
 
 .sign_container,
