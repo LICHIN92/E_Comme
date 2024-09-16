@@ -36,4 +36,10 @@
 /* .img_box:hover{
 
 } */
+@media(max-width:369px){
+    .img_box{
+        max-width: 140px;
+        max-height:180px;
+    }
 
+}
