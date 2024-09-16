@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <div className='px-0 '>
       <CarouselC />
-      <div className='flex  flex-wrap md:justify-center  border rounded my-2 py-3 lg:gap-5  md:gap-3 gap-2 '>
+      <div className='flex  flex-wrap md:justify-center  border rounded my-2 py-3 lg:gap-5  md:gap-3 gap-2 ps-2'>
        { items.length>0?
        <>{items.map((item, key) => (
           <div className='img_box relative border-l-fuchsia-700' key={key} onClick={() => ViewItem(item.Type)}>
