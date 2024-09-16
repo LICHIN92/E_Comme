@@ -18,10 +18,11 @@ const Booking = () => {
                         "Authorization":`Bearer ${token}`
                     }
                 })
-                console.log(data.data.data);
+                // console.log(data.data.data);
                 setBook(data.data.data)
             } catch (error) {
-                alert(error)
+                alert(error.response.data.message)
+                // console.log(error)
             }
         }
         book()
@@ -47,25 +48,25 @@ const Booking = () => {
                 {Book.map((item, index) => (
                     <div className='deliveredBox' key={index}>
                         <div className='itemImageName'>
-                            <img src={item.itemBooked.Pics[0]} alt="" />
-                            <h5 className='uppercase'>{item.itemBooked.Name}</h5>
+                            <img src={item?.itemBooked?.Pics[0]} alt="" />
+                            <h5 className='uppercase'>{item?.itemBooked?.Name}</h5>
 
                         </div>
                         <div>
                             <label className='text-black'>Booked By:</label>
-                            <span className='capitalize fw-bold'> {item.bookedBy.FirstName} {item.bookedBy.LastName}</span>
+                            <span className='capitalize fw-bold'> {item?.bookedBy?.FirstName} {item?.bookedBy?.LastName}</span>
                         </div>
                         <div>
                             <label className='text-black'>Mobile:</label>
-                            <span className="fw-bold">{item.bookedBy.Mobile}</span>
+                            <span className="fw-bold">{item?.bookedBy?.Mobile}</span>
                         </div>
                         <div>
                             <label className="text-black">Address:</label>
                             <ul className='fw-bold'>
-                                <li className='fw-bold'>{item.bookedBy.AddressLine1}</li>
-                                <li className='fw-bold'>{item.bookedBy.AddressLine2}</li>
-                                <li className='fw-bold'>{item.bookedBy.AddressLine3}</li>
-                                <li className='fw-bold'>PIN: {item.bookedBy.PIN}</li>
+                                <li className='fw-bold'>{item?.bookedBy?.AddressLine1}</li>
+                                <li className='fw-bold'>{item?.bookedBy?.AddressLine2}</li>
+                                <li className='fw-bold'>{item?.bookedBy?.AddressLine3}</li>
+                                <li className='fw-bold'>PIN: {item?.bookedBy?.PIN}</li>
                             </ul>
                         </div>
                         <div>

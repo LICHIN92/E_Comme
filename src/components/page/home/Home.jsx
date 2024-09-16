@@ -34,10 +34,11 @@ const Home = () => {
     }
   }
   return (
-    <div className='px-2 '>
+    <div className='px-0 '>
       <CarouselC />
-      <div className='flex  flex-wrap justify-center  border rounded my-2 py-3 lg:gap-5  gap-3 '>
-        {items.map((item, key) => (
+      <div className='flex  flex-wrap md:justify-center  border rounded my-2 py-3 lg:gap-5  md:gap-3 gap-2'>
+       { items.length>0?
+       <>{items.map((item, key) => (
           <div className='img_box relative border-l-fuchsia-700' key={key} onClick={() => ViewItem(item.Type)}>
             <img src={item.Pics[0]} alt="" />
             <div className='span_div ps-2 flex flex-col relative '>
@@ -47,8 +48,9 @@ const Home = () => {
 
             </div>
           </div>
-        ))}
-
+        ))}</>
+        : <div className='text-orange-700'> Please Wait Loading.....</div>
+}
       </div>
     </div>
   )
