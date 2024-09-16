@@ -8,7 +8,7 @@ const CarouselC = () => {
   useEffect(()=>{
   const data=async()=>{
     try {
-    const response=await axios.get('https://ecomback-yhya.onrender.com/product/home')
+    const response=await axios.get('https://ecomback-1.onrender.com/product/home')
       setImage(response.data)
       console.log(response);
       

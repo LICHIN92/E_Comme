@@ -55,7 +55,7 @@ const Book = ({ data, setBook }) => {
     try {
       console.log(formdata);
       const token=localStorage.getItem('user')
-      const response = await axios.post(`https://ecomback-yhya.onrender.com/booking/${id}`, formdata,{
+      const response = await axios.post(`https://ecomback-1.onrender.com/booking/${id}`, formdata,{
         headers:{
           'Authorization': `Bearer ${token}`
         }

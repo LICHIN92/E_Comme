@@ -40,7 +40,7 @@ const User = ({ setLoader }) => {
         }
         try {
             setLoader(true)
-            const Sign = await axios.post('https://ecomback-yhya.onrender.com/user/signup', data);
+            const Sign = await axios.post('https://ecomback-1.onrender.com/user/signup', data);
             setLoader(false)
             alert(Sign.data);
             setBoxtype('login')
@@ -56,7 +56,7 @@ const User = ({ setLoader }) => {
         localStorage.setItem('email', data.userId)
         try {
             setLoader(true)
-            const response = await axios.post('https://ecomback-yhya.onrender.com/user', data);
+            const response = await axios.post('https://ecomback-1.onrender.com/user', data);
             alert(response?.data?.message);
             setLoader(false)
             localStorage.setItem('user', response.data.token);
