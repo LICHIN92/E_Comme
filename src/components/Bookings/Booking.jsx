@@ -82,7 +82,7 @@ const Booking = () => {
                             <span className='fw-bold'>{formatDate(item.deliveredDate)}</span>
                         </div>}
                         {!item.delivery && <div className='flex justify-center items-center'>
-                            <button onClick={() => update(item._id)}>Gave</button>
+                            <button className='bg-yellow-600 px-3 py-1 text-gray-50 my-1 rounded' onClick={() => update(item._id)}>Gave</button>
                         </div>}
                     </div>
                 ))}

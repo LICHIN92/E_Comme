@@ -83,7 +83,7 @@ const Profile = () => {
       <div className='userBooking'>
         <h1>Booking</h1>
         {bookdata.length > 0 ?
-          <div className='usedbooedDetails'>
+          <div className='usedbookedDetails'>
             {bookdata.map((file, index) => (
               <div className='bookedDetail' key={index}>
                 <span className='text-black uppercase fw-medium'>{file.Name}</span>
