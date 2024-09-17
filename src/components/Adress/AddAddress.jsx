@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-const AddAddress = ({setBook}) => {
+const AddAddress = ({ setBook }) => {
     const schema = yup.object({
         AddressLine1: yup.string().required("Address Line 1 is required."),
         AddressLine2: yup.string().required("Address Line 2 is required."),
@@ -18,7 +18,7 @@ const AddAddress = ({setBook}) => {
     const submit = async (data) => {
         const token = localStorage.getItem('user');
         // console.log(token);
-        
+
         // console.log(data); // You can handle your form data here
         try {
             const result = await axios.post('https://ecomback-1.onrender.com/user/address', data, {
@@ -27,15 +27,17 @@ const AddAddress = ({setBook}) => {
                 }
             });
             console.log(result);
-            alert(result.data)
-           setBook(true)
-    
+
+            alert(result.data.message)
+            localStorage.setItem('user', result.data.token)
+            setBook(true)
+
         } catch (error) {
             console.log(error);
             alert(error.response.data)
         }
     };
-    
+
     return (
         <div className='address_container'>
             <form onSubmit={handleSubmit(submit)}>

@@ -44,11 +44,11 @@ console.log(user?.user?.user);
             <span onClick={handleToggle} className='toggle-mode'>
               {isActive ? (
                 <>
-                  <span className='modeSpan ms-2 mb-3'> Light Mode </span><img className='mode' src={light} alt="Light Mode Icon" />
+                  <span className='modeSpan ms-2 mb-3'> Light Mode <img className='mode' src={light} alt="Light Mode Icon" /></span>
                 </>
               ) : (
                 <>
-                  <span className='modeSpan'>Dark Mode</span> <img className='mode' src={dark} alt="Dark Mode Icon" />
+                  <span className='modeSpan'>Dark Mode <img className='mode' src={dark} alt="Dark Mode Icon" /></span> 
                 </>
               )}
             </span>          </div>

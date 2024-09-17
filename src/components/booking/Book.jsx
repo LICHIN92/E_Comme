@@ -61,7 +61,8 @@ const Book = ({ data, setBook }) => {
         }
       })
       setBook(false)
-      alert(response.data)
+      alert(response.data + "\nVisit your PROFILE");
+
     } catch (error) {
       console.log(error);
       alert(error.response.data);

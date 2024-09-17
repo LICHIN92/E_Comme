@@ -58,7 +58,7 @@ const NavBar = () => {
         }
         {token && user && user.user &&
           <>
-            <li onClick={profile } className='uppercase flex gap-1 items-center' > {user.user.FirstName} </li>
+            <li onClick={profile } className='link uppercase cursor-pointer flex gap-1 items-center' > {user.user.FirstName} </li>
             <li onClick={LogoutFunction}><button className='btn btn-danger py-0 px-1 capitalize'>Logout</button></li>
           </>
 
@@ -80,7 +80,7 @@ const NavBar = () => {
 
             {token && user && user.user.user ?
               <li onClick={book}><Link className='link' to=''>BOOKING</Link></li> :
-              <li onClick={handleClick}><Link className='link' to=''>CONTACT</Link></li>}
+              <li onClick={handleClick}><Link className='link'  spy={true} smooth={true} to="about">CONTACT</Link></li>}
 
 
             {token && user && user.user.user &&
@@ -88,7 +88,7 @@ const NavBar = () => {
             }
             {token && user && user.user &&
               <>
-                <li className='uppercase flex gap-1 items-center ' onClick={() => navigate('/user/profile')} ><FaRegCircleUser />{user.user.FirstName} </li>
+                <li className='link uppercase cursor-pointer flex gap-1 items-center ' onClick={() => navigate('/user/profile')} ><FaRegCircleUser />{user.user.FirstName} </li>
                 <li onClick={LogoutFunction}><button className='btn btn-danger py-0 px-1 capitalize'>Logout</button></li>
               </>
             }

@@ -67,17 +67,17 @@ const Profile = () => {
       <div className='userprofile'>
         <div className='profileName flex ps-1 gap-1'>
           <img src={profile} alt="Profile" />
-          <h1>{data.FirstName} {data.LastName}</h1>
+          <h1>{data?.FirstName} {data?.LastName}</h1>
         </div>
         <div className='flex flex-col ps-7 my-2'>
-          <span className='flex items-center gap-1'><FaMobileScreen />{data.Mobile}<abbr title="edit Mobile"> <MdModeEditOutline /></abbr></span>
-          <span className='flex items-center gap-1'><BiLogoGmail />{data.Email} <abbr title="edit email"> <MdModeEditOutline /></abbr></span>
+          <span className='flex items-center gap-1'><FaMobileScreen />{data?.Mobile}<abbr title="edit Mobile"> <MdModeEditOutline /></abbr></span>
+          <span className='flex items-center gap-1'><BiLogoGmail />{data?.Email} <abbr title="edit email"> <MdModeEditOutline /></abbr></span>
         </div>
         <div className='flex flex-col ps-7 my-2'>
-          <span className='capitalize'>{data.AddressLine1}</span>
-          <span className='capitalize'>{data.AddressLine2}</span>
-          <span className='capitalize'>{data.AddressLine3}</span>
-          <span className='capitalize'>PIN {data.PIN}</span>
+          <span className='capitalize'>{data?.AddressLine1}</span>
+          <span className='capitalize'>{data?.AddressLine2}</span>
+          <span className='capitalize'>{data?.AddressLine3}</span>
+          <span className='capitalize'>PIN {data?.PIN}</span>
         </div>
       </div>
       <div className='userBooking'>

@@ -86,7 +86,14 @@
 .mode {
     height: 25px;
 }
-
+.modeSpan{
+    
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 @media(max-width:500px){
     .modeSpan{
         font-size: 15px;
