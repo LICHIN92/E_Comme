@@ -43,7 +43,7 @@ const NavBar = () => {
       <hr />
       <ul className='text-start flex flex-col gap-1.5 text-[15px] font-serif ps-3 '>
         <li onClick={handleClick}><Link className='link' to='/'>HOME</Link> </li>
-        <li onClick={handleClick}><ScrollLink className='link' spy={true} smooth={true} to="about">ABOUT</ScrollLink> </li>
+        <li onClick={()=>handleClick}><ScrollLink className='link' spy={true} smooth={true} to="about">ABOUT</ScrollLink> </li>
         {/* <li>ITEMS</li> */}
         {token && user && user.user.user ?
               <li onClick={book}><Link className='link' to=''>BOOKING</Link></li> :

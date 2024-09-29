@@ -43,7 +43,7 @@ const Home = () => {
             <img src={item.Pics[0]} alt="" />
             <div className='span_div ps-2 flex flex-col relative '>
 
-              <span className='relative '>{item.Type}</span>
+              <span className='relativeType '>{item.Type}</span>
               {/* <span className='relative '>item</span> */}
 
             </div>
