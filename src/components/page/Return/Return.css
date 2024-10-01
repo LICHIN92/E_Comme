@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.return_container{
+    max-width: 100vw;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    padding-block: 5px;
+}
+.retutn_Detail {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5px;
+    padding-inline: 5px;
+}
+.return-item{
+    width: 220px;
+    height: 390px;
+    font-size: medium;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.return-item img{
+    width: 60px;
+    height: 70px;
+}
+.solve{
+    width: 95%;
+    align-self: center;
+    color: wheat;
+    border-radius: 9vmax;
+}

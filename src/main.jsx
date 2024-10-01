@@ -25,6 +25,7 @@ import Details from './components/DressDetails/Details.jsx'
 import Adminprotect from './protectedRouter/Adminprotect.jsx'
 import Booking from './components/Bookings/Booking.jsx'
 import DeleteCategary from './components/deletecate/DeleteCategary.jsx'
+import Return from './components/page/Return/Return.jsx'
 
 
 const router = createBrowserRouter([
@@ -64,6 +65,14 @@ const router = createBrowserRouter([
             <Booking/>
           </Adminprotect>
 
+        )
+      },
+      {
+        path:'/return/Request',
+        element:(
+          <Adminprotect>
+            <Return/>
+          </Adminprotect>
         )
       },
       {
