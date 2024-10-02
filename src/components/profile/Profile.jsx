@@ -16,7 +16,8 @@ const Profile = () => {
   const token = localStorage.getItem('user');
   const [refresh, setRefresh] = useState(false);
   const [returnback, setReturn] = useState(false);
-  const navigate=useNavigate()
+  const [number, setNumber] = useState('0')
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetch = async () => {
@@ -27,7 +28,6 @@ const Profile = () => {
           },
         });
         setData(response.data);
-        console.log(response.data);
 
       } catch (error) {
         console.error("Error fetching user data", error);
@@ -45,13 +45,24 @@ const Profile = () => {
           },
         });
         setBookData(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching bookings", error);
       }
     };
     Bookings();
   }, [id, token, refresh, returnback]);
+
+  useEffect(() => {
+    const users = async () => {
+      try {
+        const num = await axios.get('https://ecomback-1.onrender.com/user')
+        setNumber(num.data)
+      } catch (error) {
+        alert(error)
+      }
+    }
+    users()
+  }, [])
 
   const returnfun = async (id) => {
     console.log(id);
@@ -97,9 +108,11 @@ const Profile = () => {
       </div>
       <div className='userBooking'>
         {data.user ?
-          <div className='flex flex-wrap gap-6'>
-            <button className='bg-lime-700 p-2 text-white rounded-full' onClick={()=>navigate('/Bookings')}>Bookings</button>
-            <button className='bg-yellow-700 p-2 text-white rounded-full' onClick={()=>navigate('/return/Request')}>Retern Request</button>
+          <div className='flex flex-wrap gap-6 p-2'>
+            <button className='bg-lime-700 p-2 text-white rounded-full' onClick={() => navigate('/Bookings')}>Bookings</button>
+            <button className='bg-yellow-700 p-2 text-white rounded-full' onClick={() => navigate('/return/Request')}>Retern Request</button>
+            <button className='bg-blue-700 p-2 text-white rounded-full'>No.of Users = {number}</button>
+
           </div> :
           <>
             <h1>Booking</h1>
