@@ -5,9 +5,10 @@ import './Return.css'
 const Return = () => {
     const [data, setData] = useState([])
     const[refresh,setRefresh]=useState(false)
-    const token=localStorage.getItem('user')
 
     useEffect(() => {
+    const token=localStorage.getItem('user')
+
         const datafun = async () => {
             try {
                 const response = await axios.get('https://ecomback-1.onrender.com/booking/return',{
@@ -25,26 +26,31 @@ const Return = () => {
         datafun()
     }, [refresh])
 
-    const update=async(id)=>{
-     console.log(id);
-     try {
-        const res=await axios.put(`https://ecomback-1.onrender.com/booking/update/${id}`,{
-            headers:{
-                "Authorization":`Bearer ${token}`
-            }
-        })
-        setRefresh(!refresh)
+    
 
-     } catch (error) {
-        alert(error) 
-     }
+    const update = async (id) => {
+        console.log(id);
+        const token = localStorage.getItem('user');
+    
+        try {
+            const res = await axios.put(`https://ecomback-1.onrender.com/booking/update/${id}`, {}, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+            setRefresh(!refresh);
+        } catch (error) {
+            console.log(error);
+            alert(error);
+        }
     }
+    
     return (
         <div className='return_container'>
             <h3>Return Request</h3>
             <div className='retutn_Detail '>
 
-                {data.map((file, index) => (
+                {data.length>0 && data.map((file, index) => (
                     <div key={index} className="return-item">
                         <div className='flex flex-col items-center  justify-center font-semibold capitalize'>
                             <img className='' src={file.itemBooked.Pics[0]} alt={file.itemBooked.Name} />
