@@ -55,8 +55,8 @@ const Details = () => {
         const review = async () => {
             try {
                 const reviews = await axios.get(`https://ecomback-1.onrender.com/review/${id}`)
-                // console.log(reviews.data);
-                // console.log(reviews.data.rating)
+                console.log(reviews.data);
+                console.log(reviews.data.rating)
                 setReview(reviews?.data?.data)
                 setStar(reviews?.data?.rating)
             } catch (error) {
