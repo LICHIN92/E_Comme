@@ -16,7 +16,7 @@ const Item = () => {
   // console.log(type);
   const Type = type
   const { user } = useSelector(state => state.user)
-console.log(user?.user?.user);
+  console.log(user?.user?.user);
 
   useEffect(() => {
     const view = async () => {
@@ -39,7 +39,7 @@ console.log(user?.user?.user);
     <div className={isActive ? "dark" : 'itemContainer'}>
       {data.length > 0 ?
         <>
-          <div className='flex justify-between p-1'>
+          <div className='flex justify-between p-1 mb-2'>
             {/* <span>{data[0].Type}</span> */}
             <span onClick={handleToggle} className='toggle-mode'>
               {isActive ? (
@@ -48,10 +48,11 @@ console.log(user?.user?.user);
                 </>
               ) : (
                 <>
-                  <span className='modeSpan'>Dark Mode <img className='mode' src={dark} alt="Dark Mode Icon" /></span> 
+                  <span className='modeSpan'>Dark Mode <img className='mode' src={dark} alt="Dark Mode Icon" /></span>
                 </>
               )}
-            </span>          </div>
+            </span>
+          </div>
           <div className='flex gap-3 flex-wrap md:justify-center md:px-2 px-1'>
             {data.map((item, index) =>
               <div className='showbox ' key={index}
@@ -71,7 +72,7 @@ console.log(user?.user?.user);
 
               </div>
             )}
-            {user?.user?.user && <div className='addingdress cursor-pointer' onClick={()=>navigate('/AddDress')}>
+            {user?.user?.user && <div className='addingdress cursor-pointer' onClick={() => navigate('/AddDress')}>
               <img src={addItem} alt="" />
               <span>Add new {data[0].Type}</span>
             </div>}
@@ -81,10 +82,10 @@ console.log(user?.user?.user);
 
         : <div>
           <p className='p-6'>{type} is currently unavailable <br /> {type} will be added soon</p>
-          {user?.user?.user && <div className='addingdress cursor-pointer' onClick={()=>navigate('/AddDress')}>
-              <img src={addItem} alt="" />
-              <span>Add new {data[0]?.Type}</span>
-            </div>}
+          {user?.user?.user && <div className='addingdress cursor-pointer' onClick={() => navigate('/AddDress')}>
+            <img src={addItem} alt="" />
+            <span>Add new {data[0]?.Type}</span>
+          </div>}
         </div>
       }
 

@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Detail.css';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { IoIosArrowBack, IoIosArrowForward, IoMdStar } from 'react-icons/io';
 import Book from '../booking/Book';
 import { useSelector } from 'react-redux';
 import AddAddress from '../Adress/AddAddress';
 import axios from 'axios';
+import { FaUserCircle } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa6';
 
 const Details = () => {
     const location = useLocation();
     const { data: initialData } = location.state || {}; // Safely accessing state
     const { user } = useSelector((state) => state.user.user);
-    console.log(user.user);
+    // console.log(user.user);
 
     const [data, setData] = useState(initialData);
     const [book, setBook] = useState(false);
@@ -19,6 +21,8 @@ const Details = () => {
     const [address, setAddress] = useState(false);
     const [refresh, setrefresh] = useState(false)
     const [type, setType] = useState('')
+    const [Rdata, setReview] = useState([])
+    const [star,setStar]=useState(null)
     const navigate = useNavigate()
 
     const id = initialData?._id;
@@ -29,9 +33,9 @@ const Details = () => {
                 const result = await axios.get(`https://ecomback-1.onrender.com/product/${id}`);
                 setData(result.data);
                 setType(data.Type)
-                console.log(result.data);
+                // console.log(result.data);
 
-                if (data=="" || data==undefined) {
+                if (data == "" || data == undefined) {
                     navigate('/itemView', { replace: false, state: { data: {}, type: type } });
 
                 }
@@ -46,6 +50,22 @@ const Details = () => {
             fetchDetail();
         }
     }, [id, book, refresh]);
+
+    useEffect(() => {
+        const review = async () => {
+            try {
+                const reviews = await axios.get(`https://ecomback-1.onrender.com/review/${id}`)
+                console.log(reviews.data);
+                console.log(reviews.data.rating)
+                setReview(reviews.data.data)
+                setStar(reviews.data.rating)
+            } catch (error) {
+                alert(error)
+            }
+        }
+        review()
+    }, [])
+
 
     const handleIndexChange = (direction) => {
         if (direction === '1') {
@@ -64,10 +84,9 @@ const Details = () => {
             navigate('/itemView', { replace: false, state: { data: {}, type: type } });
         } catch (error) {
             console.log(error);
-
         }
-
     }
+
 
     if (!data) return <div className='NoDetail'>Loading...</div>;
 
@@ -82,10 +101,14 @@ const Details = () => {
                 <img src={data.Pics[currentIndex]} alt={data.Name || "Product Image"} />
                 <div className='flex'>
                     <IoIosArrowBack className='arrow' onClick={() => handleIndexChange('1')} />
-                        <span>{currentIndex+1}/{data.Pics.length }</span>
+                    <span>{currentIndex + 1}/{data.Pics.length}</span>
                     <IoIosArrowForward className='arrow' onClick={() => handleIndexChange('2')} />
                 </div>
                 <p className='name'>{data.Name}</p>
+                
+                <span className='bg-green-700 flex items-center justify-center gap-1 text-white px-1 startValue'>
+                    {star} <IoMdStar className='starrs text-white '/> 
+                    </span>
             </div>
             <div className='info'>
                 <span className='font-bold'>Type:</span>
@@ -126,6 +149,25 @@ const Details = () => {
                     <button className='Delete' onClick={() => deleting(data._id)}>Delete</button>
                 </div>
             }
+         
+            <div className='all_review text-black px-2 border-y-4  py-2'>
+                <h4 className='text-center underline'>Reviews</h4>
+                {Rdata.map((review, index) => (
+                    <div key={index} className="reviews-item flex flex-col my-3">
+                        <span className="review-user flex items-center gap-2 ">
+                            <FaUserCircle size={18} />
+                            <small className='text-black capitalize'>{review.user?.FirstName || "Anonymous"}</small>
+                        </span>
+                        <span className='ps-3'>{review.review}</span>
+                        <span className='flex items-center ps-3'>
+                        Rating:  {Array.from({ length: review.starRating }, (_, i) => (
+                                <FaStar key={i} color='#ffc107' />
+                            ))}
+                        </span>
+                    </div>
+                ))}
+            </div>
+
         </div>
     );
 };
