@@ -62,7 +62,7 @@ const Details = () => {
             } catch (error) {
                 alert(error)
                 console.log(error);
-                
+
             }
         }
         review()
@@ -88,6 +88,13 @@ const Details = () => {
             console.log(error);
         }
     }
+    const limitedNumber = (number) => {
+        // Return 0 if the number is null or undefined
+        if (number == null) return 0;
+        return parseFloat(number.toFixed(1));
+    };
+
+
 
 
     if (!data) return <div className='NoDetail'>Loading...</div>;
@@ -108,8 +115,8 @@ const Details = () => {
                 </div>
                 <p className='name'>{data.Name}</p>
 
-                <span className='bg-green-700 flex items-center justify-center gap-1 text-white px-1 startValue'>
-                    {star} <IoMdStar className='starrs text-white ' />
+                <span className='bg-green-700 flex items-center justify-center gap-1 text-white px-1 startValue ' >
+                    {limitedNumber(star)} <IoMdStar className='starrs text-white ' />
                 </span>
             </div>
             <div className='info'>
@@ -135,7 +142,7 @@ const Details = () => {
             {data.Size?.length > 0 && (
                 <div className='flex gap-2'>
                     <span className='font-bold'>Size:</span>
-                    {data.Size.map((size, index) => (
+                    {data?.Size.map((size, index) => (
                         <span className='size' key={index}>{size}</span>
                     ))}
                 </div>
@@ -152,24 +159,28 @@ const Details = () => {
                 </div>
             }
 
-            <div className='all_review text-black px-2 border-y-4  py-2'>
+            <div className='all_review text-black px-2 border-y-4 py-2'>
                 <h4 className='text-center underline'>Reviews</h4>
-                {Rdata.length > 0 && Rdata.map((review, index) => (
-                    <div key={index} className="reviews-item flex flex-col my-3">
-                        <span className="review-user flex items-center gap-2 ">
-                            <FaUserCircle size={18} />
-                            <small className='text-black capitalize'>{review?.user?.FirstName || "Anonymous"}</small>
-                        </span>
-                        <span className='ps-3'>{review?.review}</span>
-                        <span className='flex items-center ps-3'>
-                            Rating:  {Array.from({ length: review.starRating }, (_, i) => (
-                                <FaStar key={i} color='#ffc107' />
-                            ))}
-                        </span>
-                    </div>
-                ))}
-
+                {Rdata && Rdata.length > 0 ? (
+                    Rdata.map((review, index) => (
+                        <div key={index} className="reviews-item flex flex-col my-3">
+                            <span className="review-user flex items-center gap-2 ">
+                                <FaUserCircle size={18} />
+                                <small className='text-black capitalize'>{review?.user?.FirstName || "Anonymous"}</small>
+                            </span>
+                            <span className='ps-3'>{review?.review}</span>
+                            <span className='flex items-center ps-3'>
+                                Rating:  {Array.from({ length: review.starRating }, (_, i) => (
+                                    <FaStar key={i} color='#ffc107' />
+                                ))}
+                            </span>
+                        </div>
+                    ))
+                ) : (
+                    <div>No reviews available.</div>
+                )}
             </div>
+
 
         </div>
     );
