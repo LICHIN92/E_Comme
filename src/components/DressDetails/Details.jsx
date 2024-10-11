@@ -22,7 +22,7 @@ const Details = () => {
     const [refresh, setrefresh] = useState(false)
     const [type, setType] = useState('')
     const [Rdata, setReview] = useState([])
-    const [star,setStar]=useState(null)
+    const [star, setStar] = useState(null)
     const navigate = useNavigate()
 
     const id = initialData?._id;
@@ -55,12 +55,14 @@ const Details = () => {
         const review = async () => {
             try {
                 const reviews = await axios.get(`https://ecomback-1.onrender.com/review/${id}`)
-                console.log(reviews.data);
-                console.log(reviews.data.rating)
-                setReview(reviews.data.data)
-                setStar(reviews.data.rating)
+                // console.log(reviews.data);
+                // console.log(reviews.data.rating)
+                setReview(reviews?.data?.data)
+                setStar(reviews?.data?.rating)
             } catch (error) {
                 alert(error)
+                console.log(error);
+                
             }
         }
         review()
@@ -105,10 +107,10 @@ const Details = () => {
                     <IoIosArrowForward className='arrow' onClick={() => handleIndexChange('2')} />
                 </div>
                 <p className='name'>{data.Name}</p>
-                
+
                 <span className='bg-green-700 flex items-center justify-center gap-1 text-white px-1 startValue'>
-                    {star} <IoMdStar className='starrs text-white '/> 
-                    </span>
+                    {star} <IoMdStar className='starrs text-white ' />
+                </span>
             </div>
             <div className='info'>
                 <span className='font-bold'>Type:</span>
@@ -149,23 +151,24 @@ const Details = () => {
                     <button className='Delete' onClick={() => deleting(data._id)}>Delete</button>
                 </div>
             }
-         
+
             <div className='all_review text-black px-2 border-y-4  py-2'>
                 <h4 className='text-center underline'>Reviews</h4>
-                {Rdata.map((review, index) => (
+                {Rdata.length > 0 && Rdata.map((review, index) => (
                     <div key={index} className="reviews-item flex flex-col my-3">
                         <span className="review-user flex items-center gap-2 ">
                             <FaUserCircle size={18} />
-                            <small className='text-black capitalize'>{review.user?.FirstName || "Anonymous"}</small>
+                            <small className='text-black capitalize'>{review?.user?.FirstName || "Anonymous"}</small>
                         </span>
-                        <span className='ps-3'>{review.review}</span>
+                        <span className='ps-3'>{review?.review}</span>
                         <span className='flex items-center ps-3'>
-                        Rating:  {Array.from({ length: review.starRating }, (_, i) => (
+                            Rating:  {Array.from({ length: review.starRating }, (_, i) => (
                                 <FaStar key={i} color='#ffc107' />
                             ))}
                         </span>
                     </div>
                 ))}
+
             </div>
 
         </div>
