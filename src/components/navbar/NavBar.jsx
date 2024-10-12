@@ -16,7 +16,7 @@ const NavBar = () => {
   // const user = decodedToken
   // console.log(user);
   const { user } = useSelector(state => state.user)
-  console.log(user?.user?.user);
+  // console.log(user?.user?.user);
 
   const handleClick = () => {
     setShow(!show)

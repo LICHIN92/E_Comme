@@ -161,7 +161,7 @@ const Details = () => {
 
             <div className='all_review text-black px-2 border-y-4 py-2'>
                 <h4 className='text-center underline'>Reviews</h4>
-                {Rdata && Rdata.length > 0 ? (
+                {Rdata || Rdata.length > 0 ? (
                     Rdata.map((review, index) => (
                         <div key={index} className="reviews-item flex flex-col my-3">
                             <span className="review-user flex items-center gap-2 ">
