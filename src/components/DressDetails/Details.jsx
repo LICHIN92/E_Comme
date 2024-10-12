@@ -22,7 +22,7 @@ const Details = () => {
     const [refresh, setrefresh] = useState(false)
     const [type, setType] = useState('')
     const [Rdata, setReview] = useState([])
-    const [star, setStar] = useState(null)
+    const [star, setStar] = useState(0)
     const navigate = useNavigate()
 
     const id = initialData?._id;
@@ -56,16 +56,27 @@ const Details = () => {
             try {
                 const reviews = await axios.get(`https://ecomback-1.onrender.com/review/${id}`)
                 console.log(reviews.data);
-                console.log(reviews.data.rating)
-                setReview(reviews?.data?.data)
-                setStar(reviews?.data?.rating)
+                setReview(reviews.data)
             } catch (error) {
                 alert(error)
                 console.log(error);
-
             }
         }
         review()
+    }, [id])
+
+    useEffect(() => {
+        const RR = async () => {
+            try {
+                const rRate = await axios.get(`https://ecomback-1.onrender.com/review/avgg/${id}`)
+                setStar(rRate.data.averageRating)
+                // console.log(rRate.data.averageRating);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        RR()
     }, [])
 
 
@@ -88,15 +99,7 @@ const Details = () => {
             console.log(error);
         }
     }
-    const limitedNumber = (number) => {
-        // Return 0 if the number is null or undefined
-        if (number == null) return 0;
-        return parseFloat(number.toFixed(1));
-    };
-
-
-
-
+   
     if (!data) return <div className='NoDetail'>Loading...</div>;
 
     return (
@@ -116,7 +119,7 @@ const Details = () => {
                 <p className='name'>{data.Name}</p>
 
                 <span className='bg-green-700 flex items-center justify-center gap-1 text-white px-1 startValue ' >
-                    {limitedNumber(star)} <IoMdStar className='starrs text-white ' />
+                    {star} <IoMdStar className='starrs text-white ' />
                 </span>
             </div>
             <div className='info'>
@@ -139,7 +142,7 @@ const Details = () => {
 
                 }
             </div>
-            {data.Size?.length > 0 && (
+            {data?.Size.length > 0 && (
                 <div className='flex gap-2'>
                     <span className='font-bold'>Size:</span>
                     {data?.Size.map((size, index) => (
@@ -150,7 +153,7 @@ const Details = () => {
             {!user.user && data.Quantity > 0 && (
                 <div className='buyBox'>
                     <button className='buyButton' onClick={() => setBook(true)}>Buy Now</button>
-                    <button className='buyButton'>Add to Cart</button>
+                    <button className='buyButton addCart'>Add to Cart</button>
                 </div>
             )}
             {user.user &&
@@ -161,7 +164,8 @@ const Details = () => {
 
             <div className='all_review text-black px-2 border-y-4 py-2'>
                 <h4 className='text-center underline'>Reviews</h4>
-                {Rdata || Rdata.length > 0 ? (
+                {Rdata && Rdata.length > 0 ? (
+
                     Rdata.map((review, index) => (
                         <div key={index} className="reviews-item flex flex-col my-3">
                             <span className="review-user flex items-center gap-2 ">
