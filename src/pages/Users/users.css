@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.Users_Container {
+    max-width: 100vw;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    padding-block: 15px;
+}
+
+table {
+    border: 2px solid rgb(0, 0, 0);
+    width: 99vw;
+
+}
+
+th {
+    background-color: aqua;
+    border: 2px solid black;
+    text-align: center;
+}
+td{
+    border: 1px solid black;
+    padding-left: 3px;
+}
+.addrers_td{
+    text-overflow: clip;
+}
+.slNo{
+    width: 1vw;
+    padding-inline: .2rem;
+    padding-block: .3rem;
+}
+.delete_td{
+    width: 5vw;
+
+}
+.delete_td button{
+    background-color: red;
+    font-size: small;
+    padding: 2px;
+    color: white;
+}
+
+
+@media(max-width:400px){
+    .Users_Container{
+        padding: 10px 1px;
+    }
+    table{
+        width: 100vw;
+    } 
+}

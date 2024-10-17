@@ -26,6 +26,7 @@ import Adminprotect from './protectedRouter/Adminprotect.jsx'
 import Booking from './components/Bookings/Booking.jsx'
 import DeleteCategary from './components/deletecate/DeleteCategary.jsx'
 import Return from './components/page/Return/Return.jsx'
+import Users from './pages/Users/Users.jsx'
 
 
 const router = createBrowserRouter([
@@ -73,6 +74,14 @@ const router = createBrowserRouter([
           <Adminprotect>
             <Return/>
           </Adminprotect>
+        )
+      },
+      {
+        path:"/Users/Details",
+        element:(
+        <Adminprotect>
+          <Users/>
+        </Adminprotect>
         )
       },
       {

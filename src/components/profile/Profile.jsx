@@ -82,7 +82,7 @@ const Profile = () => {
     try {
       await axios.delete(`https://ecomback-1.onrender.com/booking/${id}`);
       setRefresh(prev => !prev);
-      alert('Canceled Your Booking');
+      alert('Your Booking has been Cancelled');
     } catch (error) {
       console.error("Error canceling booking", error);
     }
@@ -124,7 +124,7 @@ const Profile = () => {
             <div className='flex flex-wrap gap-6 p-2'>
               <button className='bg-lime-700 p-2 text-white rounded-full' onClick={() => navigate('/Bookings')}>Bookings</button>
               <button className='bg-yellow-700 p-2 text-white rounded-full' onClick={() => navigate('/return/Request')}>Retern Request</button>
-              <button className='bg-blue-700 p-2 text-white rounded-full'>No.of Users = {number}</button>
+              <button className='bg-blue-700 p-2 text-white rounded-full' onClick={()=>navigate("/Users/Details")}>No.of Users  <span className='rounded-full bg-blue-900 p-1'> {number}</span></button>
 
             </div> :
             <>
