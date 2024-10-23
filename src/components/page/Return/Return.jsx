@@ -11,7 +11,7 @@ const Return = () => {
 
         const datafun = async () => {
             try {
-                const response = await axios.get('http://localhost:3200/booking/return',{
+                const response = await axios.get('https://ecomback-1.onrender.com/booking/return',{
                     headers:{
                         "Authorization":`Bearer ${token}`
                     }
@@ -33,7 +33,7 @@ const Return = () => {
         const token = localStorage.getItem('user');
     
         try {
-            const res = await axios.put(`http://localhost:3200/booking/update/${id}`, {}, {
+            const res = await axios.put(`https://ecomback-1.onrender.com/booking/update/${id}`, {}, {
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }
