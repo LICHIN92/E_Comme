@@ -11,9 +11,11 @@
 }
 
 .modal_container img {
-    position: absolute;
-    right: 20px;
-    top: 5px;
+    position: relative;
+    right: -5px;
+    top: -245px;
+    z-index: 1;
+    background-color: rgb(56, 56, 73,.3);
 }
 
 .info_box {
@@ -62,7 +64,7 @@
 }
 @media (max-width:342px){
     .info_box{
-        width: 100%;
+        width: 90%;
         font-size: medium;
     }
 }
