@@ -30,7 +30,7 @@ const Details = () => {
     useEffect(() => {
         const fetchDetail = async () => {
             try {
-                const result = await axios.get(`https://ecomback-1.onrender.com/product/${id}`);
+                const result = await axios.get(`http://localhost:3200/product/${id}`);
                 setData(result.data);
                 setType(data.Type)
                 // console.log(result.data);
@@ -54,8 +54,8 @@ const Details = () => {
     useEffect(() => {
         const review = async () => {
             try {
-                const reviews = await axios.get(`https://ecomback-1.onrender.com/review/${id}`)
-                console.log(reviews.data);
+                const reviews = await axios.get(`http://localhost:3200/review/${id}`)
+                // console.log(reviews.data);
                 setReview(reviews.data)
             } catch (error) {
                 alert(error)
@@ -68,7 +68,7 @@ const Details = () => {
     useEffect(() => {
         const RR = async () => {
             try {
-                const rRate = await axios.get(`https://ecomback-1.onrender.com/review/avgg/${id}`)
+                const rRate = await axios.get(`http://localhost:3200/review/avgg/${id}`)
                 setStar(rRate.data.averageRating)
                 // console.log(rRate.data.averageRating);
                 
@@ -90,7 +90,7 @@ const Details = () => {
     const deleting = async (id) => {
         console.log(id);
         try {
-            const dele = await axios.delete(`https://ecomback-1.onrender.com/product/${id}`)
+            const dele = await axios.delete(`http://localhost:3200/product/${id}`)
             console.log(dele);
             alert(dele.data.message)
             setrefresh(true)

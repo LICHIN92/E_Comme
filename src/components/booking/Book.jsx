@@ -11,7 +11,7 @@ const Book = ({ data, setBook }) => {
   const price = data.Price
   let rate = price
   const id = data._id
-  console.log(id);
+  // console.log(id);
 
   let items = data.Size
   const [newrate, setRate] = useState(price)
@@ -53,9 +53,9 @@ const Book = ({ data, setBook }) => {
       
     }
     try {
-      console.log(formdata);
+      // console.log(formdata);
       const token=localStorage.getItem('user')
-      const response = await axios.post(`https://ecomback-1.onrender.com/booking/${id}`, formdata,{
+      const response = await axios.post(`http://localhost:3200/booking/${id}`, formdata,{
         headers:{
           'Authorization': `Bearer ${token}`
         }

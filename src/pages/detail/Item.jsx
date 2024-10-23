@@ -16,16 +16,16 @@ const Item = () => {
   // console.log(type);
   const Type = type
   const { user } = useSelector(state => state.user)
-  console.log(user?.user?.user);
+  // console.log(user?.user?.user);
 
   useEffect(() => {
     const view = async () => {
       try {
-        const result = await axios.get(`https://ecomback-1.onrender.com/product/viewType/${type}`);
-        console.log(result);
+        const result = await axios.get(`http://localhost:3200/product/viewType/${type}`);
+        // console.log(result);
         setData(result.data.items)
       } catch (error) {
-        console.log(error);
+        // console.log(error);
 
       }
     }

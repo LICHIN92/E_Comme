@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom'
 
 const Adminprotect = ({ children }) => {
   const { user } = useSelector((state) => state.user.user);
-  console.log(user?.user);
+  // console.log(user?.user);
 
   const token = localStorage.getItem('user')
   if (token && user?.user) {

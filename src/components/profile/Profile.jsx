@@ -25,7 +25,7 @@ const Profile = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const response = await axios.get(`https://ecomback-1.onrender.com/user/${id}`, {
+        const response = await axios.get(`http://localhost:3200/user/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -43,7 +43,7 @@ const Profile = () => {
   useEffect(() => {
     const Bookings = async () => {
       try {
-        const response = await axios.get(`https://ecomback-1.onrender.com/Booking/user/${id}`, {
+        const response = await axios.get(`http://localhost:3200/Booking/user/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -59,7 +59,7 @@ const Profile = () => {
   useEffect(() => {
     const users = async () => {
       try {
-        const num = await axios.get('https://ecomback-1.onrender.com/user')
+        const num = await axios.get('http://localhost:3200/user')
         setNumber(num.data)
       } catch (error) {
         alert(error)
@@ -72,7 +72,7 @@ const Profile = () => {
     console.log(id);
     try {
       setReturn(!returnback);
-      await axios.put(`https://ecomback-1.onrender.com/booking/return/${id}`);
+      await axios.put(`http://localhost:3200/booking/return/${id}`);
     } catch (error) {
       console.error("Error updating return status", error);
     }
@@ -80,7 +80,7 @@ const Profile = () => {
 
   const cancel = async (id) => {
     try {
-      await axios.delete(`https://ecomback-1.onrender.com/booking/${id}`);
+      await axios.delete(`http://localhost:3200/booking/${id}`);
       setRefresh(prev => !prev);
       alert('Your Booking has been Cancelled');
     } catch (error) {

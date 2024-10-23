@@ -24,7 +24,7 @@ const Review = ({ setReview, file }) => {
         data.bookingId=file._id
 
         try {
-            const submit = await axios.post(`https://ecomback-1.onrender.com/review/${id}`, data, {
+            const submit = await axios.post(`http://localhost:3200/review/${id}`, data, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             // console.log(submit);

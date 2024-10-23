@@ -29,7 +29,9 @@ td{
     padding-left: 3px;
 }
 .addrers_td{
-    text-overflow: clip;
+    overflow: auto;
+    text-transform: uppercase !important;
+    font-size: 1.rem;
 }
 .slNo{
     width: 1vw;
@@ -38,13 +40,21 @@ td{
 }
 .delete_td{
     width: 5vw;
+    padding-block: 5px;
+
 
 }
+.userName{
+    font-size: .9rem;
+    font-weight: 500;
+}
 .delete_td button{
-    background-color: red;
+    background-color: rgb(212, 151, 151);
+    border: 2px solid red;
+    outline: red;
     font-size: small;
     padding: 2px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 
@@ -55,4 +65,8 @@ td{
     table{
         width: 100vw;
     } 
+    .addrers_td{
+        font-size: small;
+        text-wrap:wrap;
+    }
 }

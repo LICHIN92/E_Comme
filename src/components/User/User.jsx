@@ -34,13 +34,13 @@ const User = ({ setLoader }) => {
     });
 
     const handleSignup = async (data) => {
-        console.log(data);
+        // console.log(data);
         if (data.Password !== data.Confirm_Password) {
             return alert('Confirm_Password does not match');
         }
         try {
             setLoader(true)
-            const Sign = await axios.post('https://ecomback-1.onrender.com/user/signup', data);
+            const Sign = await axios.post('http://localhost:3200/user/signup', data);
             setLoader(false)
             alert(Sign.data);
             setBoxtype('login')
@@ -52,11 +52,11 @@ const User = ({ setLoader }) => {
     };
 
     const LoginSubmit = async (data) => {
-        console.log(data);
+        // console.log(data);
         localStorage.setItem('email', data.userId)
         try {
             setLoader(true)
-            const response = await axios.post('https://ecomback-1.onrender.com/user', data);
+            const response = await axios.post('http://localhost:3200/user', data);
             alert(response?.data?.message);
             setLoader(false)
             localStorage.setItem('user', response.data.token);
@@ -64,7 +64,7 @@ const User = ({ setLoader }) => {
 
             const token = localStorage.getItem('user');
             const decodedToken = jwtDecode(token);
-            console.log(decodedToken);
+            // console.log(decodedToken);
             
             dispath(setUserData(decodedToken))
 
