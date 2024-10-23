@@ -7,7 +7,7 @@ import { IoLogoWhatsapp } from 'react-icons/io'
 import { FaMobileScreenButton } from 'react-icons/fa6'
 
 function Footer() {
-    const phoneNumber = "8086200861"; // Replace with the actual phone number
+    const phoneNumber = "918086200861"; // Replace with the actual phone number
     const message = "Hello! I'm interested in your products."; // Replace with your message
   const openWhatsApp = () => {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
