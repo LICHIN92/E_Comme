@@ -7,6 +7,12 @@ import { IoLogoWhatsapp } from 'react-icons/io'
 import { FaMobileScreenButton } from 'react-icons/fa6'
 
 function Footer() {
+    const phoneNumber = "8086200861"; // Replace with the actual phone number
+    const message = "Hello! I'm interested in your products."; // Replace with your message
+  const openWhatsApp = () => {
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank'); // Opens WhatsApp in a new tab
+  };
     return (
         <div className='capitalize italic font-medium bg-slate-800 grid items-center gap-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 text-slate-300  py-2 px-2'>
             <Element name='about'>
@@ -39,7 +45,7 @@ function Footer() {
                     <div className='flex ps-3 '>
                         <ul>
                             <li className='flex items-center gap-1'> <MdEmail/> email</li>
-                            <li className='flex items-center gap-1'> <IoLogoWhatsapp/> whatsApp</li>
+                            <li className='flex items-center gap-1' onClick={openWhatsApp}> <IoLogoWhatsapp/> whatsApp</li>
                             <li className='flex items-center gap-1'><FaFacebook/> facebook</li>
                         </ul>
                     </div>

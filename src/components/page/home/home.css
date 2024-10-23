@@ -10,8 +10,17 @@
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 10px 8px 15px 1px rgb(0, 0, 0, .7);
+    animation-name: ddd;
+    animation-duration: 3s; /* Duration for the animation */
+    animation-fill-mode: forwards;
 }
-
+@keyframes ddd {
+    0% { left: -1500px;opacity: 0; }
+    25% { left: -100px; opacity: .25;}
+    50% { left: -750px;opacity: .5; }
+    0% { left: -500px; opacity: .75;}
+    100% { left: 0px; opacity: 1;}
+}
 .img_box:hover {
     width: 183px;
     height: 222px;
