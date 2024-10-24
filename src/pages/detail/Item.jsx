@@ -63,8 +63,8 @@ const Item = () => {
 
                 </div>
                 <div className="showspan ">
-                  <span className='fw-medium uppercase font-serif'>{item.Name}</span>
-                  <span className='fw-bold'>  ₹ {item.Price}/- </span>
+                  <span className='uppercase font-serif it_name'>{item.Name}  </span>
+                  <span className='fw-medium '>  ₹ {item.Price}/- </span>
                   {data.Quantity <= 0 &&
                     <span className='available'>not available</span>
                   }

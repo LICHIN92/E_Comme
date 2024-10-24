@@ -20,8 +20,8 @@ const Book = ({ data, setBook }) => {
   const hanldesize = (i) => {
     setSelectedSize(i)
     console.log(selectedSize);
-    if (i === 's') {
-      rate = price + 0
+    if (i === 'S') {
+      rate = price 
     } else if (i === 'M') {
       rate = price + 50
     } else if (i === 'L') {
@@ -70,16 +70,17 @@ const Book = ({ data, setBook }) => {
 
   }
   return (
-    <div className='BookContainer'>{data._id}
+    <div className='BookContainer'>
       <form onSubmit={handleSubmit(onsubmit)}>
         <div className='bookingBox'>
           <img className='bookclose' src={close} onClick={() => setBook(false)} />
           <div className='bookImg lg:pt-2'>
             <img src={data.Pics[0]} alt="" />
+            <span>{data.Name}</span>
             <p className="flex justify-center items-center gap-2 mt-2"><span className='text-green-400 font-serif fw-bold '> <RiMoneyRupeeCircleFill /> </span>
               {newrate} /-</p>
           </div>
-          {items.length > 0 && <div className='flex md:justify-center'>
+          {items.length > 0 && <div className='flex justify-center'>
 
             <span className='text-amber-400 fw-medium'>Select Size:</span>
             <div className='flex gap-3 px-2'>

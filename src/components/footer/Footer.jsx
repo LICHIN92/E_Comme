@@ -19,7 +19,7 @@ function Footer() {
                 <div className='bg-slate-900 text-center'>about
                     <div className='flex ps-3 '>
                         <ul >
-                            <li className='flex gap-1'> <li className='italic'>E-shops</li>
+                            <li className='flex gap-1'> <li className='italic'>E-shop</li>
                              is very small business</li>
                             <li>Based on Kayakkodi</li>
                             <li>Cash on delivery</li>

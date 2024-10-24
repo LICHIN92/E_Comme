@@ -24,6 +24,7 @@ const Details = () => {
     const [Rdata, setReview] = useState([])
     const [star, setStar] = useState(0)
     const navigate = useNavigate()
+    const [showimage,Setimageshow]=useState(false)
 
     const id = initialData?._id;
 
@@ -119,7 +120,7 @@ const Details = () => {
                 <p className='name'>{data.Name}</p>
 
                 <span className='bg-green-700 flex items-center justify-center gap-1 text-white px-1 startValue ' >
-                    {star} <IoMdStar className='starrs text-white ' />
+                    {star>=1 ? {star}:1} <IoMdStar className='starrs text-white ' />
                 </span>
             </div>
             <div className='info'>
@@ -143,7 +144,7 @@ const Details = () => {
                 }
             </div>
             {data?.Size.length > 0 && (
-                <div className='flex gap-2'>
+                <div className='flex gap-2 info'>
                     <span className='font-bold'>Size:</span>
                     {data?.Size.map((size, index) => (
                         <span className='size' key={index}>{size}</span>
