@@ -120,7 +120,7 @@ const Details = () => {
                 <p className='name'>{data.Name}</p>
 
                 <span className='bg-green-700 flex items-center justify-center gap-1 text-white px-1 startValue ' >
-                    {star>=1 ? {star}:1} <IoMdStar className='starrs text-white ' />
+                    {star>=1 ? star:1} <IoMdStar className='starrs text-white ' />
                 </span>
             </div>
             <div className='info'>

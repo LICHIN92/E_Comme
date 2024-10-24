@@ -50,7 +50,7 @@
 /* .img_box:hover{
 
 } */
-@media(max-width:369px) {
+@media(max-width:560px) {
     .img_box {
         max-width: 100px;
         max-height: 130px;

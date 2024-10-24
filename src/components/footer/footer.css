@@ -3,3 +3,8 @@ li{
     font-style: normal;
     text-align: start;
 }
+@media(max-width:300px){
+    .foot li{
+        font-size: small;
+    }
+}

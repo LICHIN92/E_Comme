@@ -14,7 +14,7 @@ function Footer() {
     window.open(url, '_blank'); // Opens WhatsApp in a new tab
   };
     return (
-        <div className='capitalize italic font-medium bg-slate-800 grid items-center gap-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 text-slate-300  py-2 px-2'>
+        <div className='foot capitalize italic font-medium bg-slate-800 grid items-center gap-2 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-4 text-slate-300  py-2 px-2'>
             <Element name='about'>
                 <div className='bg-slate-900 text-center'>about
                     <div className='flex ps-3 '>

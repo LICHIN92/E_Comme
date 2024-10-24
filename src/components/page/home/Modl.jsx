@@ -6,7 +6,7 @@ const Modl = ({ setModal }) => {
     const [language, setLanguage] = useState(false)
     return (
         <div className='modal_container'>
-            <img className=' lg:w-8 lg:h-10 w-6 h-5 ' src={close} onClick={() => setModal(false)} alt='close'/>
+            <img className=' lg:w-8 lg:h-10 w-8 h-6 ' src={close} onClick={() => setModal(false)} alt='close'/>
             <div className='info_box'>
                 <div className='heading'>
                     <h2 className='font-serif font-semibold'>E-shop</h2>
