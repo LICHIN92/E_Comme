@@ -4,6 +4,7 @@ import './home.css'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Modl from './Modl';
+import Symboll from './Symboll';
 const Home = () => {
   const navigate = useNavigate();
   const [items, setItems] = useState([])
@@ -21,6 +22,7 @@ const Home = () => {
       }
     }
     items()
+    
   }, [])
   const ViewItem = async (Type) => {
     const user = localStorage.getItem('user')
@@ -37,6 +39,7 @@ const Home = () => {
   }
   return (
     <div className='px-0 '>
+      {/* {items.length == 0 && <Symboll/>} */}
       {!token && modall && <Modl setModal={setModal} />}
 
       <CarouselC />
