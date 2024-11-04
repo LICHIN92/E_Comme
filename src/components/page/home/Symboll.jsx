@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './ymbol.css'
 import $ from 'jquery'
-import logo from '../../../assets/creative-elegant-abstract-minimalistic-logo-design-vector-any-brand-company_1287271-50142.jpg'
+import logo from '../../../assets/logooo.jpg'
 
 const Symboll = () => {
 

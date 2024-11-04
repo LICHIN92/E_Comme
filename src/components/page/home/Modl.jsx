@@ -7,7 +7,7 @@ const Modl = ({ setModal }) => {
     const [language, setLanguage] = useState(false)
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        const loadingTimer = setTimeout(() => setLoading(false), 3000);
+        const loadingTimer = setTimeout(() => setLoading(false), 5000);
 
         return () => clearTimeout(loadingTimer); // Clear timer on cleanup
     }, [])
