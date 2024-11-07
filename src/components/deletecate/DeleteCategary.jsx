@@ -21,7 +21,7 @@ const DeleteCategary = () => {
   const ViewItem = async (Type) => {
     const user = localStorage.getItem('user')
     if (user) {
-      const result = await axios.get(`https://ecomback-1.onrender.com/product/viewType/${Type}`);
+      const result = await axios.get(`http://localhost:3200/product/viewType/${Type}`);
       console.log(result.data.items);
 
       // Correctly passing state

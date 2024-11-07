@@ -10,7 +10,7 @@ const Users = () => {
     useEffect(() => {
         const fetchDetail = async () => {
             try {
-                const fetchdata = await axios.get("https://ecomback-1.onrender.com/user/user/all")
+                const fetchdata = await axios.get("http://localhost:3200/user/user/all")
                 // console.log(fetchdata);
                 setData(fetchdata.data)
             } catch (error) {
