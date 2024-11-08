@@ -11,7 +11,7 @@ const Symboll = () => {
       width: '300px',
       height: '300px',
       opacity: '1'
-    }, 2000);
+    }, 5000);
   }, []);
   return (
     <div className=' symbol_container'>

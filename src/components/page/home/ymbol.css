@@ -26,8 +26,8 @@
 #symbol_img #imgg{
     position: relative;
     top: 20px;
-    width: 1px;
-    height: 1px;
+    width: 0px;
+    height: 0px;
     opacity: .1
 }
 #symbol_img span{
