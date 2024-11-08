@@ -9,15 +9,18 @@
     max-width: 100vw;
     min-height: 70vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
 
+}
+.namer{
+    font-size: 14px;
 }
 
 .userprofile {
     background-color: rgb(255, 255, 255);
     padding: 5px;
     /* color: white; */
-    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
     text-wrap: wrap;
 }
 
@@ -40,10 +43,11 @@
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .bookedDetail {
-    width: 200px;
+    width: 150px;
     margin-top: 5px;
     border: 1px solid;
     display: flex;
@@ -65,7 +69,7 @@
 @media (max-width: 600px) {
     .profile {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
+        /* grid-template-rows: repeat(2, 1fr); */
         padding: 5p;
     }
 
@@ -77,5 +81,23 @@
     .userprofile {
         border-bottom: 1px solid blue;
         border-right: none;
+    }
+}
+@media(max-width:366px){
+    .usedbookedDetails {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .bookedDetail {
+        width: 110px;
+        margin-top: 5px;
+        border: 1px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2px;
+        border-radius: 5px;
     }
 }

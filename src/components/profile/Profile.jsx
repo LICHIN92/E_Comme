@@ -130,10 +130,11 @@ const Profile = () => {
             <>
               <h1>Booking</h1>
               {bookdata.length > 0 ? (
-                <div className='usedbookedDetails'>
+                <div className='usedbookedDetails '>
                   {bookdata.map((file, index) => (
-                    <div className='bookedDetail' key={index}>
-                      <span className='text-black uppercase fw-medium'>{file.Name}</span>
+                    <div className={`bookedDetail ${file.delivery ? 'bg-green-900 text-white' : ''}`} key={index}>
+
+                      <span className='text-black uppercase namer'>{file.Name}</span>
                       <div className="bookedimage">
                         <img src={file?.itemBooked?.Pics[0]} alt="Booking Item" />
                       </div>
