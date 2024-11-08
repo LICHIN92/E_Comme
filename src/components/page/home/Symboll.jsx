@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './ymbol.css'
 import $ from 'jquery'
-import logo from '../../../assets/logooo.jpg'
+import logo from '../../../assets/phoenix.jpg'
 
 const Symboll = () => {
 
@@ -17,7 +17,7 @@ const Symboll = () => {
     <div className=' symbol_container'>
       <div id="symbol_img">
         <img id='imgg' src={logo} alt="" />
-
+        <span>E-shop</span>
       </div>
     </div>
   )

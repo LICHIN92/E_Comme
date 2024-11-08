@@ -21,6 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 #symbol_img #imgg{
     position: relative;
@@ -28,4 +29,14 @@
     width: 1px;
     height: 1px;
     opacity: .1
+}
+#symbol_img span{
+ position: absolute;
+ top: 55px;
+ left: 125px;
+ font-size: larger;
+ font-weight: bold;
+ color: white;
+ font-style: italic;
+ z-index: 1;
 }
