@@ -46,7 +46,7 @@ const AddDress = () => {
     }
    
     const handleCheckBoxChange = (size) => {
-        setSize((prevSelectedSize) =>
+        setSize((prevSelectedSize) =>  
             prevSelectedSize.includes(size)
                 ? prevSelectedSize.filter((i) => i !== size)
                 : [...prevSelectedSize, size]
@@ -95,6 +95,7 @@ const AddDress = () => {
             alert(error.response.data)
         }
     }
+    const weburl=''
     return (
         <div className='addDress flex flex-col items-center'>
             {loader&& <Loader/>}

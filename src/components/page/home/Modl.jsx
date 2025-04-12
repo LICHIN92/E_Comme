@@ -38,10 +38,7 @@ const Modl = ({ setModal }) => {
                     </p>
 
                 }
-                {/* <div className='ee'>
-                    {language ? <button onClick={() => setLanguage(!language)}>Enlish</button> :
-                        <button onClick={() => setLanguage(!language)}>മലയാളം</button>}
-                </div> */}
+                
             </div>
         </div>
     )

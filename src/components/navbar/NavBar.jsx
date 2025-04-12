@@ -47,7 +47,9 @@ const NavBar = () => {
         {/* <li>ITEMS</li> */}
         {token && user && user.user.user ?
               <li onClick={book}><Link className='link' to=''>BOOKING</Link></li> :
-              <li onClick={handleClick}><Link className='link' to=''>CONTACT</Link></li>}
+              <li onClick={handleClick}><ScrollLink className='link' spy={true} smooth={true} to="contact">CONTACT</ScrollLink> </li>
+
+              }
 
         {token && user && user.user.user &&
           <li onClick={addsection}><Link className='link' to=''>ADD_ITEM</Link></li>
@@ -80,7 +82,8 @@ const NavBar = () => {
 
             {token && user && user.user.user ?
               <li onClick={book}><Link className='link' to=''>BOOKING</Link></li> :
-              <li onClick={handleClick}><Link className='link'  spy={true} smooth={true} to="about">CONTACT</Link></li>}
+              <li onClick={handleClick}><ScrollLink className='link' spy={true} smooth={true} to="contact">CONTACT</ScrollLink> </li>
+}
 
 
             {token && user && user.user.user &&

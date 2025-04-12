@@ -10,6 +10,7 @@ const Home = () => {
   const [items, setItems] = useState([])
   const [modall, setModal] = useState(true)
   const token = localStorage.getItem('user')
+  const [time,setTime]=useState(false)
   useEffect(() => {
     const items = async () => {
       try {
@@ -22,7 +23,7 @@ const Home = () => {
       }
     }
     items()
-    
+
   }, [])
   const ViewItem = async (Type) => {
     const user = localStorage.getItem('user')
@@ -39,7 +40,7 @@ const Home = () => {
   }
   return (
     <div className='px-0 '>
-      {/* {items.length == 0 && <Symboll/>} */}
+      {!time && <Symboll time={setTime}/>}
       {!token && modall && <Modl setModal={setModal} />}
 
       <CarouselC />
