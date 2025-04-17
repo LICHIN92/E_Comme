@@ -33,15 +33,15 @@ import gsap from 'gsap';
 const Symboll = ({time}) => {
   useEffect(() => {
     gsap.to(".E", {
-      duration: 3,
+      duration: 5,
       rotation: 360,
       opacity: 1,
-      delay: 0.3,
-      stagger: 0.2,
-      ease: "sine.out",
-      force3D: true,
+      // delay: 0.3,
+      stagger: 0,
+      ease: "sine.inOut",
+      // force3D: true,
     });
-    setInterval(()=>{time(true)},5500)
+    setInterval(()=>{time(true)},6000)
   }, []);
 
   return (
